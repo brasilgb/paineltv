@@ -13,7 +13,7 @@ module.exports = {
         "solar-red-100": "#E74C3C",
         "solar-red-200": "#EE2839",
         "solar-red-300": "#BD1522"
-      }
+      },
     },
     fontFamily: {
       Roboto: ["Roboto, sans-serif"]

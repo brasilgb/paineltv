@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-// import { useHistory } from 'react-router'
+import { useHistory } from 'react-router'
 import { AiFillCaretUp } from 'react-icons/ai'
 
 const NavBar = () => {
@@ -9,21 +9,22 @@ const NavBar = () => {
     const { pathname } = location;
     const splitLocation = pathname.split("/");
 
-    // let history = useHistory()
-    // const locate = splitLocation[1];
-    // setTimeout(function () {
+    const locate = splitLocation[1];
+    const history = useHistory()
+    
+    setTimeout(function () {
 
-    //     switch (locate) {
-    //         case '': return history.push("/acompanhamento")
-    //         case 'acompanhamento': return history.push("/vendadia")
-    //         case 'vendadia': return history.push("/vendames")
-    //         case 'vendames': return history.push("/vendaano")
-    //         case 'vendaano': return history.push("/evolucao")
-    //         case 'evolucao': return history.push("/")
-    //         default: return false;
-    //     };
+        switch (locate) {
+            case '': return history.push("/acompanhamento")
+            case 'acompanhamento': return history.push("/vendasdia")
+            case 'vendasdia': return history.push("/vendasmes")
+            case 'vendasmes': return history.push("/vendasano")
+            case 'vendasano': return history.push("/evolucao")
+            case 'evolucao': return history.push("/")
+            default: return false;
+        };
 
-    // }, 15000);
+    }, 15000);
 
     return (
         <Fragment>
@@ -36,59 +37,55 @@ const NavBar = () => {
                         </Link>
                     </li>
 
-                    <li className={"relative h-full px-4 flex items-center transition duration-300 hover:bg-white hover:text-yellow-500 " + (splitLocation[1] === "acompanhamento" ? "bg-white text-yellow-600" : "text-white")}>
+                    <li className={"relative h-full px-4 text-white text-shadow flex items-center transition duration-300 hover:bg-white hover:text-yellow-500 " + (splitLocation[1] === "acompanhamento" ? "bg-white text-yellow-600" : "text-white")}>
                         <Link to="/acompanhamento">
                             Acompanhamento
-                            {splitLocation[1] === "acompanhamento" && <div className="absolute left-0 w-full flex justify-center mx-auto text-gray-100 text-shadow" style={{bottom: '-12px'}}>
+                            {splitLocation[1] === "acompanhamento" && <div className="absolute left-0 w-full flex justify-center mx-auto text-gray-200 text-shadow" style={{ bottom: '-12px' }}>
                                 <AiFillCaretUp className="text-4xl" />
                             </div>
                             }
                         </Link>
                     </li>
 
-                    <li className={"relative h-full px-4 flex items-center transition  duration-300 hover:bg-white hover:text-yellow-500 " + (splitLocation[1] === "vendadia" ? "bg-white text-yellow-600" : "text-white")}>
+                    <li className={"relative h-full px-4 text-white text-shadow flex items-center transition  duration-300 hover:bg-white hover:text-yellow-500 " + (splitLocation[1] === "vendasdia" ? "bg-white text-yellow-600" : "text-white")}>
                         <Link to="/vendasdia">
                             Vendas Dia
-                            {splitLocation[1] === "vendadia" && <div className="absolute left-0 w-full flex justify-center mx-auto text-gray-100 text-shadow" style={{bottom: '-12px'}}>
+                            {splitLocation[1] === "vendasdia" && <div className="absolute left-0 w-full flex justify-center mx-auto text-gray-200 text-shadow" style={{ bottom: '-12px' }}>
                                 <AiFillCaretUp className="text-4xl" />
                             </div>
                             }
                         </Link>
                     </li>
 
-
-                    <li className={"relative h-full px-4 flex items-center transition  duration-300 hover:bg-white hover:text-yellow-500 " + (splitLocation[1] === "vendames" ? "bg-white text-yellow-600" : "text-white")}>
+                    <li className={"relative h-full px-4 text-white text-shadow flex items-center transition  duration-300 hover:bg-white hover:text-yellow-500 " + (splitLocation[1] === "vendasmes" ? "bg-white text-yellow-600" : "text-white")}>
                         <Link to="vendasmes">
                             Vendas Mês
-                            {splitLocation[1] === "vendames" && <div className="absolute left-0 w-full flex justify-center mx-auto text-gray-100 text-shadow" style={{bottom: '-12px'}}>
+                            {splitLocation[1] === "vendasmes" && <div className="absolute left-0 w-full flex justify-center mx-auto text-gray-200 text-shadow" style={{ bottom: '-12px' }}>
                                 <AiFillCaretUp className="text-4xl" />
                             </div>
                             }
                         </Link>
                     </li>
 
-
-                    <li className={"relative h-full px-4 flex items-center transition  duration-300 hover:bg-white hover:text-yellow-500 " + (splitLocation[1] === "vendaano" ? "bg-white text-yellow-600" : "text-white")}>
+                    <li className={"relative h-full px-4 text-white text-shadow flex items-center transition  duration-300 hover:bg-white hover:text-yellow-500 " + (splitLocation[1] === "vendasano" ? "bg-white text-yellow-600" : "text-white")}>
                         <Link to="vendasano">
                             Vendas Ano
-                            {splitLocation[1] === "vendaano" && <div className="absolute left-0 w-full flex justify-center mx-auto text-gray-100 text-shadow" style={{bottom: '-12px'}}>
+                            {splitLocation[1] === "vendasano" && <div className="absolute left-0 w-full flex justify-center mx-auto text-gray-200 text-shadow" style={{ bottom: '-12px' }}>
                                 <AiFillCaretUp className="text-4xl" />
                             </div>
                             }
                         </Link>
                     </li>
 
-
-                    <li className={"relative h-full px-4 flex items-center transition  duration-300 hover:bg-white hover:text-yellow-500 " + (splitLocation[1] === "evolucao" ? "bg-white text-yellow-600" : "text-white")}>
+                    <li className={"relative h-full px-4 text-white text-shadow flex items-center transition  duration-300 hover:bg-white hover:text-yellow-500 " + (splitLocation[1] === "evolucao" ? "bg-white text-yellow-600" : "text-white")}>
                         <Link to="/evolucao">
                             Evolução do Mês
-                            {splitLocation[1] === "evolucao" && <div className="absolute left-0 w-full flex justify-center mx-auto text-gray-200 text-shadow" style={{bottom: '-12px'}}>
+                            {splitLocation[1] === "evolucao" && <div className="absolute left-0 w-full flex justify-center mx-auto text-gray-200 text-shadow" style={{ bottom: '-12px' }}>
                                 <AiFillCaretUp className="text-4xl" />
                             </div>
                             }
                         </Link>
                     </li>
-
 
                 </ul>
             </nav>
